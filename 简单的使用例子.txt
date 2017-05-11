@@ -1,0 +1,16 @@
+Json::Reader reader;
+Json::Value value;
+//类型转换
+if (!reader.parse(respons.toStdString().c_str(), value)){}
+//取int
+int intJson = value["errcode"].asInt(); 
+//取string
+std::string stringJson= value["msg"].asString(); 
+//对象里面取字段
+value["data"]["version"].asString();
+
+//解析数组
+Json::Reader arrayReader; 
+Json::Value  arrayValue = value["jsonstring"]["jsonarray"]; 
+arrayValue[0].asString();
+
